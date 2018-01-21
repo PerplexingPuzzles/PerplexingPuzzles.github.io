@@ -45,9 +45,11 @@
  }
 .sc3 {
     height: auto;
-    padding: 10px 5px;
     margin: 0 auto;
     /*width: fit-content;*/
+}
+.sc4 {
+    padding: 10px 5px;
 }
  .scrImg {
      margin: 0px;
