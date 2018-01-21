@@ -43,7 +43,11 @@
 .sc2:hover {
     box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.2);
  }
-
+.sc3 {
+    height: auto;
+    margin: 0 auto;
+    /*width: fit-content;*/
+}
  .scrImg {
      margin: 0px;
      padding: 0px;
@@ -258,3 +262,50 @@
      border-top: none;
      background-color: #fff;
  }
+ #list li:nth-child(even) {
+    background: #e1e1e1;
+}
+
+
+
+
+select {
+  margin: 50px 0;
+  background: white;
+  width: 200px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+background:
+    linear-gradient(45deg, transparent 50%, #444 50%),
+    linear-gradient(135deg, #444 50%, transparent 50%),
+    linear-gradient(to right, #ebe787, #ebe787),
+    linear-gradient(to right, white, white);
+   background-position:
+    calc(100% - 18px) calc(1em),
+    calc(100% - 13px) calc(1em),
+    100% 0,
+    0 0;
+  background-size:
+    5px 5px,
+    5px 5px,
+    2em 2em,
+    100% 100%;
+  background-repeat: no-repeat;
+}
+
+
+
+select::-ms-expand { 
+    display: none; /* remove default arrow in IE 10 and 11 */
+}
+@media screen and (min-width:0\0) {
+    select {
+        background:none\9;
+        padding: 5px\9;
+    }
+}

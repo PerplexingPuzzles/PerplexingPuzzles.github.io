@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112279351-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-112279351-1');
+    </script>
+
+    <title>Perplexing Puzzles</title>
+
+    <meta content="https://perplexingpuzzles.github.io/img/favicon.png" property="og:image:secure" />
+    <meta content="Perplexing Puzzles" property="og:description" />
+    <meta charset="UTF-8">
+    <meta name="description" content="The Perplexing Puzzles Project is a community-driven puzzle project built in Super Mario Maker.">
+    <meta name="keywords" content="Mario Maker,puzzle,SMM,Super Mario Maker,Mario">
+    <meta name="author" content="Ottomated">
+
+    <link rel="icon" href="../img/favicon.png">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+
+</head>
+
+<body style="background-color:#7e690d; text-align:center;">
+    <div class="bgdiv">
+        <h1 class="head mFont" style="font-size:4em;"><a href='../'>PERPLEXING PUZZLES</a><br/>Level List</h1>
+        <!-- Navigation bar -->
+        <div class="scroll" style="background-image: url('../img/bg.png');">
+
+<a href='../' style='display:block;height:256px;width:256px;'>
+            <img src="../img/icon.png" width="256" height="256" class="cover">
+            </a>
+        </div><br/>
+<span class="mFont">Sort:</span><select onchange="sortStuff.apply(this,this.value.split(' '))">
+  <option value="0 -1">Created: First to Last</option>
+  <option value="0 1">Created: Last to First</option>
+  <option value="1 -1">Difficulty: Easy First</option>
+  <option value="1 1">Difficulty: Hard First</option>
+</select>
+<br/>
+<ul id="list" style="border:1px solid black;padding:0;width:50%;margin:0 auto;">
+	<li id="11-11" class="scroll sc2 sc3">
+            <a class="mFont" style="width:100%;display:inline-block;text-decoration: none;text-align:center;" href="../level11">The Return of Echigo Mole</a>
+        </li>
+	<li id="10-3" class="scroll sc2 sc3">
+            <a class="mFont" style="width:100%;display:inline-block;text-decoration: none;text-align:center;" href="../level10">Perplexing Puzzle Box</a>
+        </li>
+	<li id="9-6" class="scroll sc2 sc3">
+            <a class="mFont" style="width:100%;display:inline-block;text-decoration: none;text-align:center;" href="../level9">Yoshiception</a>
+        </li>
+	<li id="8-6" class="scroll sc2 sc3">
+            <a class="mFont" style="width:100%;display:inline-block;text-decoration: none;text-align:center;" href="../level8">Death and Return of Puzzle</a>
+        </li>
+	<li id="7-2" class="scroll sc2 sc3">
+            <a class="mFont" style="width:100%;display:inline-block;text-decoration: none;text-align:center;" href="../level7">Secret Secluded Sanctuary</a>
+        </li>
+	<li id="6-5" class="scroll sc2 sc3">
+            <a class="mFont" style="width:100%;display:inline-block;text-decoration: none;text-align:center;" href="../level6">Not too close</a>
+        </li>
+        <li id="5-4" class="scroll sc2 sc3">
+            <a class="mFont" style="width:100%;display:inline-block;text-decoration: none;text-align:center;" href="../level5">Through the Walls</a>
+        </li>
+        <li id="4-8" class="scroll sc2 sc3">
+            <a class="mFont" style="width:100%;display:inline-block;text-decoration: none;text-align:center;" href="../level4">POWnundrum Puzzle</a>
+        </li>
+        <li id="3-5" class="scroll sc2 sc3">
+            <a class="mFont" style="width:100%;display:inline-block;text-decoration: none;text-align:center;" href="../level3">Moonlit Musical Manor</a>
+        </li>
+        <li id="2-8" class="scroll sc2 sc3">
+            <a class="mFont" style="width:100%;display:inline-block;text-decoration: none;text-align:center;" href="../level2">The Clock Tower Conundrums</a>
+        </li>
+        <li id="1-6" class="scroll sc2 sc3">
+            <a class="mFont" style="width:100%;display:inline-block;text-decoration: none;text-align:center;" href="../level1">Pen &amp; Paper Pyramid</a>
+        </li>
+</ul>
+<script type="text/javascript">
+sortStuff = (type, rev) => {
+var toSort = document.getElementById('list').children;
+toSort = Array.prototype.slice.call(toSort, 0);
+
+toSort.sort(function(a, b) {
+    var aord = +a.id.split('-')[type];
+    var bord = +b.id.split('-')[type];
+    // two elements never have the same ID hence this is sufficient:
+    return ((aord > bord) ? -1 : 1)*rev;
+});
+
+var parent = document.getElementById('list');
+parent.innerHTML = "";
+
+for(var i = 0, l = toSort.length; i < l; i++) {
+	console.log(toSort[i].children[0]);
+	toSort[i].children[0].innerHTML = toSort[i].children[0].getAttribute('data-levelname') + ` <span style="color:red">(${toSort[i].id.split('-')[type]})</span>`;
+
+    parent.appendChild(toSort[i]);
+}
+}
+for(var i = 0, j = Array.prototype.slice.call(document.getElementById('list').children,0); i < j.length; i++) {
+    j[i].children[0].setAttribute('data-levelName', j[i].innerText);
+}
+sortStuff(0,-1);
+</script>
+        <h1 id="creditsHead" class="head mFont" style="font-size:2.5em;">CREDITS</h1>
+        <!-- todo: open discord? -->
+        <h3 class="head mFont">LEVEL CREATORS:</h3>
+        <a target="_blank" href="https://supermariomakerbookmark.nintendo.net/profile/goliathoffline">Pink Birdo</a><br/>
+        <a target="_blank" href="https://supermariomakerbookmark.nintendo.net/profile/MozzarellaCheese">Affordable_fun</a><br/>
+        <a target="_blank" href="https://supermariomakerbookmark.nintendo.net/profile/ZoraFishy">Cheezy</a><br/>
+        <a target="_blank" href="https://supermariomakerbookmark.nintendo.net/profile/Seanhip2">Seanhip2</a><br/>
+        <a target="_blank" href="https://supermariomakerbookmark.nintendo.net/profile/Yoshis4Dayz">AKAToad</a><br/>
+        <a target="_blank" href="https://supermariomakerbookmark.nintendo.net/profile/KJBeast1000">Kian</a><br/>
+	<a target="_blank" href="https://supermariomakerbookmark.nintendo.net/profile/lucaman23">Lucaman</a><br/>
+	<a target="_blank" href="https://supermariomakerbookmark.nintendo.net/profile/Mrichston2">Mrichston</a><br/>
+	<a target="_blank" href="https://supermariomakerbookmark.nintendo.net/profile/billlumbergh">Deathtospies</a><br/>
+	<a target="_blank" href="https://supermariomakerbookmark.nintendo.net/profile/MaestroGamer79">Nintendophile Dave</a><br/>
+	<a target="_blank" href="https://supermariomakerbookmark.nintendo.net/profile/Tetrapteryx">Tetrapteryx</a><br/>
+        <h3 class="head mFont">SPECIAL THANKS TO:</h3>
+        <p><strong>Ottomated</strong> for website design</p>
+
+    </div>
+</body>
+
+</html>
