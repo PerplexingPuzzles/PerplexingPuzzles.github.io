@@ -54,7 +54,7 @@
 	<li id="10-3" class="scroll sc2 sc3">
             <a class="mFont" style="width:100%;display:inline-block;text-decoration: none;text-align:center;" href="../level10">Perplexing Puzzle Box</a>
         </li>
-	<li id="9-6" class="scroll sc2 sc3">
+	<li id="9-8" class="scroll sc2 sc3">
             <a class="mFont" style="width:100%;display:inline-block;text-decoration: none;text-align:center;" href="../level9">Yoshiception</a>
         </li>
 	<li id="8-6" class="scroll sc2 sc3">
@@ -90,7 +90,6 @@ toSort = Array.prototype.slice.call(toSort, 0);
 toSort.sort(function(a, b) {
     var aord = +a.id.split('-')[type];
     var bord = +b.id.split('-')[type];
-    // two elements never have the same ID hence this is sufficient:
     return ((aord > bord) ? -1 : 1)*rev;
 });
 
